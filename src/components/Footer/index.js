@@ -19,13 +19,19 @@ var styles = {
 	upper: {
 		width: '100%',
 		backgroundColor: theme.palette.primary2Color,
-		padding: '0 128px',
-		boxSizing: 'border-box'
+		padding: '32px 128px',
+		boxSizing: 'border-box',
+		height: '260px'
 	},
 	upperBox: {
 		display: 'inline-block',
-		padding: '32px 16px',
-		verticalAlign: 'top'
+		padding: '32px 76px 32px 32px',
+		verticalAlign: 'top',
+		height: '100%',
+		boxSizing: 'border-box'
+	},
+	upperBoxBorder: {
+		borderLeft: '1px dashed #666',
 	},
 	logo: {
 		backgroundImage: `url(${Logo2})`,
@@ -40,10 +46,13 @@ var styles = {
 		fontSize: '14px',
 		width: '196px'
 	},
+	upperText: {
+		marginBottom: '4px'
+	},
 	bottom: {
 		width: '100%',
 		backgroundColor: theme.palette.primary1Color,
-		padding: '0 128px',
+		padding: '0 144px',
 		boxSizing: 'border-box'
 	},
 	bottomText: {
@@ -62,17 +71,22 @@ const Footer = () => (
 	<footer style={styles.base}>
 		<div style={styles.upper}>
 			<div style={styles.upperBox}>
-				<div style={[styles.text1Color]}>ABOUT MSA</div>
-				<div style={[styles.text2Color]}>ORGANIZATION</div>
-				<div style={[styles.text2Color]}>MISSION AND VISION</div>
+				<div style={[styles.upperText, styles.text1Color]}>MEMBERSHIP</div>
+				<div style={[styles.upperText, styles.text2Color]}>JOIN US</div>
+				<div style={[styles.upperText, styles.text2Color]}>CAST & CREW</div>
 			</div>
-			<div style={styles.upperBox}>
-				<div style={[styles.text1Color]}>MEMBERSHIP</div>
-				<div style={[styles.text2Color]}>JOIN US</div>
-				<div style={[styles.text2Color]}>CORE MEMBER</div>
-				<div style={[styles.text2Color]}>CAST & CREW</div>
+			<div style={[styles.upperBox, styles.upperBoxBorder]}>
+				<div style={[styles.upperText, styles.text1Color]}>UPDATES</div>
+				<div style={[styles.upperText, styles.text2Color]}>BLOG</div>
+				<div style={[styles.upperText, styles.text2Color]}>SCHEDULE</div>
 			</div>
-			<div style={styles.upperBox}>
+			<div style={[styles.upperBox, styles.upperBoxBorder]}>
+				<div style={[styles.upperText, styles.text1Color]}>ABOUT MSA</div>
+				<div style={[styles.upperText, styles.text2Color]}>ORGANIZATION</div>
+				<div style={[styles.upperText, styles.text2Color]}>MISSION AND VISION</div>
+				<div style={[styles.upperText, styles.text2Color]}>CORE MEMBER</div>
+			</div>
+			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.text1Color, styles.quote]}>"The true value of a telescope is the number of people who have viewed the heavens through it."
 -John Dobson
 </div>
