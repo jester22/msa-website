@@ -89,7 +89,7 @@ const Footer = () => (
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.text1Color, styles.quote]}>"The true value of a telescope is the number of people who have viewed the heavens through it."
 -John Dobson
-</div>
+				</div>
 				<div style={[styles.logo]}></div>
 			</div>
 		</div>
