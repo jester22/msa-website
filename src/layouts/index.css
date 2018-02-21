@@ -12,7 +12,9 @@ body {
 .link-arrow {
   font-size: 12px;
   color: #3569a4;
+  text-decoration: none;
 }
+
 .link-arrow::after {
   content: "→";
   top: 0px;

@@ -1,6 +1,10 @@
-const Promise = require(`bluebird`)
-const path = require(`path`)
-const slash = require(`slash`)
+const Promise = require(`bluebird`);
+const path = require(`path`);
+const slash = require(`slash`);
+
+const titleToPath = (title) => {
+	return title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
+}
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
 	const { createPage } = boundActionCreators
@@ -9,7 +13,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			allContentfulBlogPost(limit: 1000) {
 				edges {
 					node {
-						id
+						id,
+						title
 					}
 				}
 			}
@@ -20,7 +25,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			const postTemplate = path.resolve(`./src/templates/blogPost.js`)
 			result.data.allContentfulBlogPost.edges.forEach(edge => {
 				createPage({
-					path: `/blog/${edge.node.id}/`,
+					path: `/blog/${titleToPath(edge.node.title)}/`,
 					component: slash(postTemplate),
 					context: {
 						id: edge.node.id,

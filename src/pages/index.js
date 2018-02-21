@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Radium, {Style} from 'radium';
 import theme from '../utils/theme.js';
+import titleToPath from '../utils/titleToPath';
 
 var styles = {
 	base: {
@@ -59,7 +60,7 @@ const IndexPage = ({data}) => (
 					<div key={index} style={styles.box}>
 						<img alt={edge.node.title} style={styles.img} src={edge.node.thumbnail.file.url} />
 						<div style={styles.postTitle}>{edge.node.title}</div>
-						<div><a className="link-arrow">
+						<div><a className="link-arrow" href={`blog/${titleToPath(edge.node.title)}#${titleToPath(edge.node.title)}`}>
 							Read More
 						</a></div>
 					</div>
