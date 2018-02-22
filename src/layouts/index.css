@@ -9,6 +9,10 @@ body {
   color: #fff;
 }
 
+a {
+  text-decoration: none;
+}
+
 .link-arrow {
   font-size: 12px;
   color: #3569a4;

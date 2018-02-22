@@ -3,7 +3,6 @@ import Link from "gatsby-link";
 import Radium, {Style} from "radium";
 import * as PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
-import titleToPath from '../utils/titleToPath';
 
 const propTypes = {
 	data: PropTypes.object.isRequired,
@@ -26,7 +25,7 @@ class BlogPostTemplate extends React.Component {
 			content: { content }
 		} = post
 		return (
-			<div id={titleToPath(title)}>
+			<div>
 				<Style 	scopeSelector=".post-content-class"
 					rules={{
 						backgroundColor: '#e6e7e8',

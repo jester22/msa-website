@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import theme from '../../utils/theme.js';
 import Logo2 from "../../images/logo2.png";
+import Link from "gatsby-link"
 
 var styles = {
 	base: {
@@ -67,7 +68,6 @@ var styles = {
 		display: 'inline-block',
 		verticalAlign: 'middle',
 		boxSizing: 'border-box',
-		boxSizing: 'border-box',
 		width: '30%',
 		textAlign: 'center',
 		paddingLeft: '16px'
@@ -84,7 +84,7 @@ const Footer = () => (
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.upperText, styles.text1Color]}>UPDATES</div>
-				<div style={[styles.upperText, styles.text2Color]}>BLOG</div>
+				<div style={[styles.upperText, styles.text2Color]}><a style={styles.text2Color} href="/blog">BLOG</a></div>
 				<div style={[styles.upperText, styles.text2Color]}>SCHEDULE</div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>

@@ -40,12 +40,18 @@ var styles = {
 		height: 116,
 		objectFit: 'cover',
 	},
-	postTitle: {
-		fontWeight: 'bold',
-		fontSize: '20px',
+	postContainer: {
 		padding: '16px 0px',
 		overflow: 'hidden',
 		height: '64px'
+	},
+	postTitle: {
+		fontWeight: 'bold',
+		fontSize: '20px',
+	},
+	postDate: {
+		fontSize: '14px',
+		paddingTop: '8px'
 	}
 }
 
@@ -59,8 +65,11 @@ const IndexPage = ({data}) => (
 				data.allContentfulBlogPost.edges.map((edge, index) => (
 					<div key={index} style={styles.box}>
 						<img alt={edge.node.title} style={styles.img} src={edge.node.thumbnail.file.url} />
-						<div style={styles.postTitle}>{edge.node.title}</div>
-						<div><a className="link-arrow" href={`blog/${titleToPath(edge.node.title)}#${titleToPath(edge.node.title)}`}>
+						<div style={styles.postContainer}>
+							<span style={styles.postTitle}>{edge.node.title}</span><br/>
+							<span style={styles.postDate}>{edge.node.publicationDate}</span>
+						</div>
+						<div><a className="link-arrow" href={`blog/${titleToPath(edge.node.title)}`}>
 							Read More
 						</a></div>
 					</div>
@@ -78,6 +87,7 @@ export const query = graphql`
 			edges {
 				node {
 					title,
+					publicationDate(formatString: "MMMM DD, YYYY"),
 					thumbnail {
 						file {
 							url

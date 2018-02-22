@@ -24,7 +24,7 @@ var styles = {
 	},
 	blog: {
 		padding: '80px 0 70px',
-		width: 'fit-content',
+		width: '1122px',
 		margin: '0 auto'
 	},
 	box: {
@@ -32,7 +32,7 @@ var styles = {
 		boxShadow: '0 2px 5px 0 rgba(0,0,0,0.25)',
 		width: '262px',
 		height: '232px',
-		margin: '0 32px',
+		margin: '0 32px 32px 32px',
 		padding: '24px',
 		verticalAlign: 'top'
 	},
@@ -47,6 +47,19 @@ var styles = {
 		padding: '16px 0px',
 		overflow: 'hidden',
 		height: '64px'
+	},
+	postContainer: {
+		padding: '16px 0px',
+		overflow: 'hidden',
+		height: '64px'
+	},
+	postTitle: {
+		fontWeight: 'bold',
+		fontSize: '20px',
+	},
+	postDate: {
+		fontSize: '14px',
+		paddingTop: '8px'
 	}
 }
 
@@ -61,7 +74,10 @@ const BlogPage = ({data}) => (
 				data.allContentfulBlogPost.edges.map((edge, index) => (
 					<div key={index} style={styles.box}>
 						<img alt={edge.node.title} style={styles.img} src={edge.node.thumbnail.file.url} />
-						<div style={styles.postTitle}>{edge.node.title}</div>
+						<div style={styles.postContainer}>
+							<span style={styles.postTitle}>{edge.node.title}</span><br/>
+							<span style={styles.postDate}>{edge.node.publicationDate}</span>
+						</div>
 						<div><a className="link-arrow" href={`blog/${titleToPath(edge.node.title)}#${titleToPath(edge.node.title)}`}>
 							Read More
 						</a></div>
@@ -76,10 +92,11 @@ export default Radium(BlogPage);
 
 export const query = graphql`
 	query AllContentfulBlogPost {
-		allContentfulBlogPost(limit: 3, sort:{order:DESC, fields:[publicationDate]}) {
+		allContentfulBlogPost(sort:{order:DESC, fields:[publicationDate]}) {
 			edges {
 				node {
 					title,
+					publicationDate(formatString: "MMMM DD, YYYY"),
 					thumbnail {
 						file {
 							url

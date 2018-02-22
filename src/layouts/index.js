@@ -15,10 +15,22 @@ const TemplateWrapper = ({ children }) => (
 			<link rel="shortcut icon" href={FavIcon}/>
 		</Helmet>
 	<Header />
-	<div>
+	<div id="children">
 		{children()}
 	</div>
 	<Footer />
+		<Helmet>
+			<script type="text/javascript">
+			{`
+				window.addEventListener("load", function(){
+					if(window.location.pathname !== "/") {
+						var top = document.getElementById('children').offsetTop;
+						window.scrollTo(0, top);
+					}
+				});
+			`}
+			</script>
+		</Helmet>
 	</div>
 )
 
