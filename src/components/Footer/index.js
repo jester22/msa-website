@@ -57,13 +57,20 @@ var styles = {
 	},
 	bottomText: {
 		display: 'inline-block',
-		padding: '16px  16px'
-	},
-	bottomTextInside: {
-		padding: '16px 0px 16px 16px'
+		padding: '16px 0px 16px 16px',
+		boxSizing: 'border-box'
 	},
 	copyright: {
 		float: 'right'
+	},
+	contentfulLogo: {
+		display: 'inline-block',
+		verticalAlign: 'middle',
+		boxSizing: 'border-box',
+		boxSizing: 'border-box',
+		width: '30%',
+		textAlign: 'center',
+		paddingLeft: '16px'
 	}
 }
 
@@ -95,9 +102,16 @@ const Footer = () => (
 		</div>
 		<div style={styles.bottom}>
 			<div style={[styles.bottomText, styles.text3Color]}>FOLLOW MSA</div>
-			<div style={[styles.bottomText, styles.text3Color, {padding: '0px'}]}>|</div>
-			<div style={[styles.bottomText, styles.bottomTextInside, styles.text2Color]}>FACEBOOK</div>
-			<div style={[styles.bottomText, styles.bottomTextInside, styles.text2Color]}>TWITTER</div>
+			<div style={[styles.bottomText, styles.text3Color]}>|</div>
+			<div style={[styles.bottomText, styles.text2Color]}>FACEBOOK</div>
+			<div style={[styles.bottomText, styles.text2Color]}>TWITTER</div>
+
+			<div style={[styles.contentfulLogo]}>
+				<a href="https://www.contentful.com/" rel="nofollow" target="_blank">
+				<img src="https://images.contentful.com/fo9twyrwpveg/7F5pMEOhJ6Y2WukCa2cYws/398e290725ef2d3b3f0f5a73ae8401d6/PoweredByContentful_DarkBackground.svg" 
+					style={{height: '30px'}} alt="Powered by Contentful" /></a>
+			</div>
+
 			<div style={[styles.bottomText, styles.text3Color, styles.copyright]}>© 2018 MANILA STREET ASTRONOMERS ORG.</div>
 		</div>
 	</footer>

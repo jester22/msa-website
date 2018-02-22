@@ -8,13 +8,9 @@ import './index.css';
 
 const TemplateWrapper = ({ children }) => (
 	<div style={{height: '100%'}}>
-		<Helmet
-			meta={[
-				{ name: 'description', content: 'Sample' },
-				{ name: 'keywords', content: 'sample, something' }
-			]}
-		>
+		<Helmet>
 			<title>Manila Street Astronomers</title>
+			<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 			<link rel="shortcut icon" href={FavIcon}/>
 		</Helmet>

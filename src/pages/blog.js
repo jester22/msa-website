@@ -4,6 +4,7 @@ import Radium, {Style} from 'radium';
 import theme from '../utils/theme.js';
 import titleToPath from '../utils/titleToPath';
 
+
 var styles = {
 	base: {
 		background: '#fff',
@@ -49,10 +50,11 @@ var styles = {
 	}
 }
 
-const IndexPage = ({data}) => (
+
+const BlogPage = ({data}) => (
 	<div style={styles.base}>
 		<div style={styles.boxShadow}>
-			<div style={styles.title}>MANILA STREET ASTRONOMERS NEWS AND UPDATES</div>
+			<div style={styles.title}>BLOG</div>
 		</div>
 		<div style={styles.blog}>
 			{
@@ -70,10 +72,10 @@ const IndexPage = ({data}) => (
 	</div>
 )
 
-export default Radium(IndexPage);
+export default Radium(BlogPage);
 
 export const query = graphql`
-	query RecentBlogPost {
+	query AllContentfulBlogPost {
 		allContentfulBlogPost(limit: 3, sort:{order:DESC, fields:[publicationDate]}) {
 			edges {
 				node {
