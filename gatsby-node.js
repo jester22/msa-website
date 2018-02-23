@@ -2,7 +2,7 @@ const Promise = require(`bluebird`);
 const path = require(`path`);
 const slash = require(`slash`);
 
-const titleToPath = (title) => {
+const formatToPath = (title) => {
 	return title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
 }
 
@@ -22,17 +22,46 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			if (result.errors) {
 				reject(result.errors)
 			}
-			const postTemplate = path.resolve(`./src/templates/blogPost.js`)
+			const template = path.resolve(`./src/templates/blogPost.js`)
 			result.data.allContentfulBlogPost.edges.forEach(edge => {
 				createPage({
-					path: `/blog/${titleToPath(edge.node.title)}/`,
-					component: slash(postTemplate),
+					path: `/blog/${formatToPath(edge.node.title)}/`,
+					component: slash(template),
 					context: {
-						id: edge.node.id,
+						id: edge.node.id
 					}
 				})
 			})
-			resolve();
+		}).then(() => {
+			graphql(
+			`
+				{
+					allContentfulMember(limit: 1000) {
+						edges {
+							node {
+								id,
+								name
+							}
+						}
+					}
+				}
+			`
+			).then(result => {
+				if (result.errors) {
+					reject(result.errors)
+				}
+				const template = path.resolve(`./src/templates/member.js`)
+				result.data.allContentfulMember.edges.forEach(edge => {
+					createPage({
+						path: `/member/${formatToPath(edge.node.name)}/`,
+						component: slash(template),
+						context: {
+							id: edge.node.id
+						}
+					})
+				})
+				resolve();
+			})
 		})
 	})
 }

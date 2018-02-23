@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Radium, {Style} from 'radium';
 import theme from '../utils/theme.js';
-import titleToPath from '../utils/titleToPath';
-
+import formatToPath from '../utils/formatToPath';
+import { ParentBox, ChildBox } from '../components'
 
 var styles = {
 	base: {
@@ -22,31 +22,10 @@ var styles = {
 		fontWeight: 'bold',
 		fontSize: '20px'
 	},
-	blog: {
-		padding: '80px 0 70px',
-		width: '1122px',
-		margin: '0 auto'
-	},
-	box: {
-		display: 'inline-block',
-		boxShadow: '0 2px 5px 0 rgba(0,0,0,0.25)',
-		width: '262px',
-		height: '232px',
-		margin: '0 32px 32px 32px',
-		padding: '24px',
-		verticalAlign: 'top'
-	},
 	img: {
 		width: 256,
 		height: 116,
 		objectFit: 'cover',
-	},
-	postTitle: {
-		fontWeight: 'bold',
-		fontSize: '20px',
-		padding: '16px 0px',
-		overflow: 'hidden',
-		height: '64px'
 	},
 	postContainer: {
 		padding: '16px 0px',
@@ -69,22 +48,22 @@ const BlogPage = ({data}) => (
 		<div style={styles.boxShadow}>
 			<div style={styles.title}>BLOG</div>
 		</div>
-		<div style={styles.blog}>
+		<ParentBox>
 			{
 				data.allContentfulBlogPost.edges.map((edge, index) => (
-					<div key={index} style={styles.box}>
+					<ChildBox key={index}>
 						<img alt={edge.node.title} style={styles.img} src={edge.node.thumbnail.file.url} />
 						<div style={styles.postContainer}>
 							<span style={styles.postTitle}>{edge.node.title}</span><br/>
 							<span style={styles.postDate}>{edge.node.publicationDate}</span>
 						</div>
-						<div><a className="link-arrow" href={`blog/${titleToPath(edge.node.title)}#${titleToPath(edge.node.title)}`}>
+						<div><a className="link-arrow" href={`blog/${formatToPath(edge.node.title)}`}>
 							Read More
 						</a></div>
-					</div>
+					</ChildBox>
 				))
 			}
-		</div>
+		</ParentBox>
 	</div>
 )
 

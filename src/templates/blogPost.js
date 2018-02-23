@@ -3,17 +3,10 @@ import Link from "gatsby-link";
 import Radium, {Style} from "radium";
 import * as PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
+import {SectionTitle} from "../components";
 
 const propTypes = {
 	data: PropTypes.object.isRequired,
-}
-
-var styles = {
-	title: {
-		fontSize: '30px',
-		fontWeight: '500',
-		lineHeight: '36px'
-	}
 }
 
 class BlogPostTemplate extends React.Component {
@@ -39,13 +32,10 @@ class BlogPostTemplate extends React.Component {
 							margin: '0 auto',
 							maxHeight: '400px',
 							maxWidth: '100%'
-						},
-						a: {
-							textDecoration: 'none'
 						}
 				}} />
 				<div className="post-content-class">
-					<div style={styles.title}>{title}</div>
+					<SectionTitle>{title}</SectionTitle>
 					<div>{publicationDate}</div>
 					<ReactMarkdown source={content} />
 				</div>
@@ -59,7 +49,7 @@ BlogPostTemplate.propTypes = propTypes
 export default Radium(BlogPostTemplate);
 
 export const pageQuery = graphql`
-	query productQuery($id: String!) {
+	query blogQuery($id: String!) {
 		contentfulBlogPost(id: { eq: $id }) {
 			title,
 			publicationDate(formatString: "MMMM DD, YYYY"),
