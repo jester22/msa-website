@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import {PageBox} from "../components"
 import {SectionTitle} from "../components";
 import Helmet from 'react-helmet';
+import formatToPath from '../utils/formatToPath';
 
 const propTypes = {
 	data: PropTypes.object.isRequired,
