@@ -4,6 +4,8 @@ import Radium, {Style} from "radium";
 import * as PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import {SectionTitle} from "../components";
+import Helmet from 'react-helmet';
+import formatToPath from '../utils/formatToPath';
 
 const propTypes = {
 	data: PropTypes.object.isRequired,
@@ -15,10 +17,21 @@ class BlogPostTemplate extends React.Component {
 		const {
 			title,
 			publicationDate,
-			content: { content }
+			content: { content },
+			thumbnail: {
+				file : {
+					url
+				}
+			}
 		} = post
 		return (
 			<div>
+				<Helmet>
+					<meta property="og:url" content={location.href} />
+					<meta property="og:type" content="article" />
+					<meta property="og:title" content={title}/>
+					<meta property="og:image"  content={url} />
+				</Helmet>
 				<Style 	scopeSelector=".post-content-class"
 					rules={{
 						backgroundColor: '#e6e7e8',

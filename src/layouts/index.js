@@ -12,9 +12,10 @@ const TemplateWrapper = ({ children }) => (
 	<div style={{height: '100%'}}>
 		<Helmet>
 			<title>Manila Street Astronomers</title>
-			<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+			<meta name="description" content="Manila Street Astronomers Website"/>
+			<meta name="keywords" content="MSA, Manila Street Astronomers, Astronomy, Street Astronomers, Philippines, Manila"/>
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-			<link rel="shortcut icon" href={FavIcon}/>
+			<link rel="shortcut icon" href={FavIcon}/>	
 		</Helmet>
 	<Header />
 	<div id="children">

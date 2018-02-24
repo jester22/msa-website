@@ -33,7 +33,7 @@ var styles = {
 			height: '100%',
 			backgroundRepeat: 'no-repeat',
 			backgroundPosition: 'center center',
-			backgroundSize: 'cover'
+			backgroundSize: 'contain'
 		}
 	},
 	menu: {
