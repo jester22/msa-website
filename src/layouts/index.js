@@ -14,6 +14,11 @@ const TemplateWrapper = ({ children }) => (
 			<title>Manila Street Astronomers</title>
 			<meta name="description" content="Manila Street Astronomers Website"/>
 			<meta name="keywords" content="MSA, Manila Street Astronomers, Astronomy, Street Astronomers, Philippines, Manila"/>
+				<meta property="og:url" content="https://manilastreetastronomers.org/" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Manila Street Astronomers"/>
+				<meta property="og:description" content="Manila Street Astronomers is a non-profit astronomy outreach group who advocates astronomy education, collaboration, and communication for all."/>
+				<meta property="og:image"  content={url} />
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 			<link rel="shortcut icon" href={FavIcon}/>	
 		</Helmet>
