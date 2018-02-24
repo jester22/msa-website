@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content="Manila Street Astronomers"/>
 				<meta property="og:description" content="Manila Street Astronomers is a non-profit astronomy outreach group who advocates astronomy education, collaboration, and communication for all."/>
-				<meta property="og:image"  content={url} />
+				<meta property="og:image"  content="https://images.contentful.com/1o5ly3na7qu2/1h05fEFhuIo4ks2QoMM0AQ/a018913bc8168b0e5d8868e09703c6e7/logo2.png" />
 			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 			<link rel="shortcut icon" href={FavIcon}/>	
 		</Helmet>
