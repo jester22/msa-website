@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
 		return (
 			<div>
 				<Helmet>
-					<meta property="og:url" content={location.href} />
+					<meta property="og:url" content={window.location.href} />
 					<meta property="og:type" content="article" />
 					<meta property="og:title" content={title}/>
 					<meta property="og:image"  content={url} />
