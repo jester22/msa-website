@@ -78,20 +78,20 @@ const Footer = () => (
 	<footer style={styles.base}>
 		<div style={styles.upper}>
 			<div style={styles.upperBox}>
-				<div style={[styles.upperText, styles.text1Color]}>MEMBERSHIP</div>
-				<div style={[styles.upperText, styles.text2Color]}>JOIN US</div>
-				<div style={[styles.upperText, styles.text2Color]}>CAST & CREW</div>
+				<div style={styles.upperText}><a style={styles.text1Color} href="/membership">MEMBERSHIP</a></div>
+				<div style={styles.upperText}><a style={styles.text2Color} href="/membership#join-us">JOIN US</a></div>
+				<div style={styles.upperText}><a style={styles.text2Color} href="/membership#cast-crew">CAST & CREW</a></div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.upperText, styles.text1Color]}>UPDATES</div>
-				<div style={[styles.upperText, styles.text2Color]}><a style={styles.text2Color} href="/blog">BLOG</a></div>
-				<div style={[styles.upperText, styles.text2Color]}>SCHEDULE</div>
+				<div style={styles.upperText}><a style={styles.text2Color} href="/blog">BLOG</a></div>
+				<div style={styles.upperText}><a style={styles.text2Color} href="/schedule">SCHEDULE</a></div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
-				<div style={[styles.upperText, styles.text1Color]}>ABOUT MSA</div>
-				<div style={[styles.upperText, styles.text2Color]}><a style={styles.text2Color} href="/about#organization">ORGANIZATION</a></div>
-				<div style={[styles.upperText, styles.text2Color]}><a style={styles.text2Color} href="/about#missionAndVision">MISSION AND VISION</a></div>
-				<div style={[styles.upperText, styles.text2Color]}><a style={styles.text2Color} href="/about#coreMember">CORE MEMBER</a></div>
+				<div style={styles.upperText}><a style={styles.text1Color} href="/about">ABOUT MSA</a></div>
+				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#organization">ORGANIZATION</a></div>
+				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#missionAndVision">MISSION AND VISION</a></div>
+				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#coreMember">CORE MEMBER</a></div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.text1Color, styles.quote]}>"The true value of a telescope is the number of people who have viewed the heavens through it."
@@ -103,8 +103,8 @@ const Footer = () => (
 		<div style={styles.bottom}>
 			<div style={[styles.bottomText, styles.text3Color]}>FOLLOW MSA</div>
 			<div style={[styles.bottomText, styles.text3Color]}>|</div>
-			<div style={[styles.bottomText, styles.text2Color]}>FACEBOOK</div>
-			<div style={[styles.bottomText, styles.text2Color]}>TWITTER</div>
+			<div style={styles.bottomText}><a style={styles.text2Color} href="https://web.facebook.com/ManilaStreetAstronomers/">FACEBOOK</a></div>
+			<div style={styles.bottomText}><a style={styles.text2Color} href="https://twitter.com/MlaStreetAstro">TWITTER</a></div>
 
 			<div style={[styles.contentfulLogo]}>
 				<a href="https://www.contentful.com/" rel="nofollow" target="_blank">

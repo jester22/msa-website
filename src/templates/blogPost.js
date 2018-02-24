@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
 				<div className="post-content-class">
 					<SectionTitle>{title}</SectionTitle>
 					<div>{publicationDate}</div>
-					<ReactMarkdown source={content} />
+					<ReactMarkdown escapeHtml={false} source={content} />
 				</div>
 			</div>
 		)

@@ -26,13 +26,11 @@ var styles = {
 	}
 }
 
-const AboutPage = ({data}) => (
+const MembershipPage = ({data}) => (
 	<PageBox>
-		<SectionTitle domProps={{id: "organization"}}>The Organization</SectionTitle>
-		<ReactMarkdown source={data.contentfulApp.about.about} />
-		<SectionTitle domProps={{id:"mission-and-vision"}}>Mission And Vision</SectionTitle>
-		<ReactMarkdown source={data.contentfulApp.missionAndVision.missionAndVision} />
-		<SectionTitle domProps={{id:"core-member"}} style={{textAlign: 'center'}}>Core Members</SectionTitle>
+		<SectionTitle domProps={{id: "join-us"}}>Membership</SectionTitle>
+		<ReactMarkdown source={data.contentfulApp.membership.membership} />
+		<SectionTitle domProps={{id:"cast-crew"}} style={{textAlign: 'center'}}>Cast & Crew</SectionTitle>
 		<ParentBox>
 			{
 				data.allContentfulMember.edges.map((edge, index) => (
@@ -40,7 +38,7 @@ const AboutPage = ({data}) => (
 						<img alt={edge.node.name} style={styles.img} src={edge.node.thumbnail.file.url} />
 						<div style={styles.elementContainer}>
 							<div style={styles.name}>{edge.node.name}</div>
-							<div style={styles.designation}>{edge.node.designation}</div>
+							<div style={styles.designation}>{edge.node.designation ?  edge.node.designation : 'Cast & Crew'}</div>
 						</div>
 						<div><a className="link-arrow" href={`/member/${formatToPath(edge.node.name)}`}>
 							View Profile
@@ -52,19 +50,16 @@ const AboutPage = ({data}) => (
 	</PageBox>
 )
 
-export default Radium(AboutPage);
+export default Radium(MembershipPage);
 
 export const query = graphql`
-	query AboutUsQuery {
+	query MembershipQuery {
 		contentfulApp{
-			about {
-				about
-			},
-			missionAndVision {
-				missionAndVision
+			membership {
+				membership
 			}
 		},
-		allContentfulMember(filter:{isCoreMember: {eq:true}}, sort:{order:ASC, fields:[createdAt]}) {
+		allContentfulMember(filter:{isCoreMember: {eq:false}}, sort:{order:ASC, fields:[createdAt]}) {
 			edges {
 				node {
 					name,

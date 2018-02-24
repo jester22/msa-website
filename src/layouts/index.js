@@ -4,9 +4,11 @@ import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FavIcon from '../images/favicon.png';
+import {StyleRoot} from 'radium';
 import './index.css';
 
 const TemplateWrapper = ({ children }) => (
+	<StyleRoot style={{height: '100%'}}>
 	<div style={{height: '100%'}}>
 		<Helmet>
 			<title>Manila Street Astronomers</title>
@@ -32,6 +34,7 @@ const TemplateWrapper = ({ children }) => (
 			</script>
 		</Helmet>
 	</div>
+	</StyleRoot>
 )
 
 TemplateWrapper.propTypes = {

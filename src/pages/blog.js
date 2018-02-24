@@ -57,7 +57,7 @@ const BlogPage = ({data}) => (
 							<span style={styles.postTitle}>{edge.node.title}</span><br/>
 							<span style={styles.postDate}>{edge.node.publicationDate}</span>
 						</div>
-						<div><a className="link-arrow" href={`blog/${formatToPath(edge.node.title)}`}>
+						<div><a className="link-arrow" href={`/blog/${formatToPath(edge.node.title)}`}>
 							Read More
 						</a></div>
 					</ChildBox>
