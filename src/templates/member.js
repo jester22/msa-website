@@ -29,7 +29,7 @@ class MemberTemplate extends React.Component {
 		return (
 			<PageBox>
 				<Helmet>
-					<meta property="og:url" content={window.location.href} />
+				<meta property="og:url" content={`http://manilastreetastronomers.org/member/${formatToPath(name)}`} />
 					<meta property="og:type" content="article" />
 					<meta property="og:title" content={name}/>
 					<meta property="og:image"  content={url} />
