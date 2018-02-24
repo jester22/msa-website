@@ -4,8 +4,8 @@ import Radium  from'radium';
 import Background from "../../images/bg.jpg";
 import Logo from "../../images/logo.png";
 import MenuButton from "../../images/menu-button.png";
-import theme from '../../utils/theme.js';
-import mediaQueries from '../../utils/mediaQueries.js';
+import theme from '../../utils/theme';
+import mediaQueries from '../../utils/mediaQueries';
 import Moon from "./Moon";
 
 var styles = {
@@ -54,7 +54,7 @@ var styles = {
 	menuItem: {
 		[mediaQueries.breakpointLarge]: {
 			display: 'table-cell',
-			color: theme.palette.textColor,
+			color: theme.palette.text1Color,
 			height: '100%',
 			verticalAlign: 'middle',
 			padding: '0 32px'
@@ -91,6 +91,9 @@ var styles = {
 		[mediaQueries.breakpointSmall]: {
 			display: 'none'
 		}
+	},
+	text1Color:	{
+		color: theme.palette.text1Color
 	}
 }
 
@@ -111,19 +114,19 @@ class Header extends React.Component {
 			}}/>
 			<div style={[styles.menu, menuStyle]}>
 				<div style={styles.menuItem}>
-					About Us
+					<a style={styles.text1Color} href="/about">ABOUT US</a>
 				</div>
 				<div style={styles.menuItem}>
-					Schedule
+					<a style={styles.text1Color} href="/schedule">SCHEDULE</a>
 				</div>
 				<div style={styles.moon}>
 					<Moon/>
 				</div>
 				<div style={styles.menuItem}>
-					Membership
+					<a style={styles.text1Color} href="/membership">MEMBERSHIP</a>
 				</div>
 				<div style={styles.menuItem}>
-					Blog
+					<a style={styles.text1Color} href="/blog">BLOG</a>
 				</div>
 			</div>
 			<div style={styles.logo}></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import theme from '../../utils/theme.js';
 import Logo2 from "../../images/logo2.png";
+import mediaQueries from '../../utils/mediaQueries.js';
 import Link from "gatsby-link"
 
 var styles = {
@@ -20,19 +21,26 @@ var styles = {
 	upper: {
 		width: '100%',
 		backgroundColor: theme.palette.primary2Color,
-		padding: '32px 128px',
+		padding: '32px 0',
 		boxSizing: 'border-box',
-		height: '260px'
+		textAlign: 'center'
 	},
 	upperBox: {
 		display: 'inline-block',
-		padding: '32px 76px 32px 32px',
+		padding: '0 48px',
+		margin: '32px 0',
 		verticalAlign: 'top',
 		height: '100%',
-		boxSizing: 'border-box'
+		boxSizing: 'border-box',
+		height: '160px'
 	},
 	upperBoxBorder: {
-		borderLeft: '1px dashed #666',
+		[mediaQueries.breakpointLarge]: {
+			borderLeft: '1px dashed #666'
+		},
+		[mediaQueries.breakpointSmall]: {
+			borderLeft: 'none'
+		}
 	},
 	logo: {
 		backgroundImage: `url(${Logo2})`,
@@ -45,7 +53,8 @@ var styles = {
 	quote: {
 		wordWrap: 'break-word',
 		fontSize: '14px',
-		width: '196px'
+		width: '196px',
+		textAlign: 'left'
 	},
 	upperText: {
 		marginBottom: '4px'
@@ -53,24 +62,20 @@ var styles = {
 	bottom: {
 		width: '100%',
 		backgroundColor: theme.palette.primary1Color,
-		padding: '0 144px',
-		boxSizing: 'border-box'
+		boxSizing: 'border-box',
+		textAlign:'center'
 	},
 	bottomText: {
 		display: 'inline-block',
-		padding: '16px 0px 16px 16px',
+		padding: '16px',
 		boxSizing: 'border-box'
-	},
-	copyright: {
-		float: 'right'
 	},
 	contentfulLogo: {
 		display: 'inline-block',
 		verticalAlign: 'middle',
 		boxSizing: 'border-box',
-		width: '30%',
-		textAlign: 'center',
-		paddingLeft: '16px'
+		width: '120px',
+		textAlign: 'center'
 	}
 }
 
@@ -112,7 +117,7 @@ const Footer = () => (
 					style={{height: '30px'}} alt="Powered by Contentful" /></a>
 			</div>
 
-			<div style={[styles.bottomText, styles.text3Color, styles.copyright]}>© 2018 MANILA STREET ASTRONOMERS ORG.</div>
+			<div style={[styles.bottomText, styles.text3Color]}>© 2018 MANILA STREET ASTRONOMERS ORG.</div>
 		</div>
 	</footer>
 )

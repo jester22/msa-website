@@ -25,7 +25,6 @@ class MemberTemplate extends React.Component {
 				content
 			}
 		} = member
-		console.log('de', designation);
 		return (
 			<PageBox>
 				<SectionTitle>{name}</SectionTitle>
