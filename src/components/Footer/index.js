@@ -95,8 +95,8 @@ const Footer = () => (
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={styles.upperText}><a style={styles.text1Color} href="/about">ABOUT MSA</a></div>
 				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#organization">ORGANIZATION</a></div>
-				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#missionAndVision">MISSION AND VISION</a></div>
-				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#coreMember">CORE MEMBER</a></div>
+				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#mission-and-vision">MISSION AND VISION</a></div>
+				<div style={[styles.upperText]}><a style={styles.text2Color} href="/about#core-member">CORE MEMBER</a></div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.text1Color, styles.quote]}>"The true value of a telescope is the number of people who have viewed the heavens through it."
