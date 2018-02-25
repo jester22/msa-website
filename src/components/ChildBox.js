@@ -10,6 +10,7 @@ var styles = {
 		height: '232px',
 		padding: '24px',
 		verticalAlign: 'top',
+		textAlign: 'left',
 		[mediaQueries.breakpointLarge]: {
 			margin: '0 32px 32px 32px'
 		},
