@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Radium, {Style} from 'radium';
 import theme from '../utils/theme.js';
 import formatToPath from '../utils/formatToPath';
-import { ParentBox, ChildBox } from '../components'
+import { ParentBox, ChildBox } from '../components';
+
 var styles = {
 	base: {
 		background: '#fff',
