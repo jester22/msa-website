@@ -3,10 +3,11 @@ import Link from 'gatsby-link';
 import Radium  from'radium';
 import Background from "../../images/bg.jpg";
 import Logo from "../../images/logo.png";
+import Moon from "../../images/moon.png";
 import MenuButton from "../../images/menu-button.png";
 import theme from '../../utils/theme';
 import mediaQueries from '../../utils/mediaQueries';
-import Moon from "./Moon";
+// import Moon from "./Moon";
 
 var styles = {
 	background: {
@@ -65,6 +66,11 @@ var styles = {
 		}
 	},
 	moon: {
+		backgroundImage: `url(${Moon})`,
+		width: '32px',
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'center center',
+		backgroundSize: 'contain',
 		[mediaQueries.breakpointLarge]: {
 			display: 'table-cell',
 		},
@@ -120,7 +126,7 @@ class Header extends React.Component {
 					<a style={styles.text1Color} href="/schedule">SCHEDULE</a>
 				</div>
 				<div style={styles.moon}>
-					<Moon/>
+					{/* <Moon/> */}
 				</div>
 				<div style={styles.menuItem}>
 					<a style={styles.text1Color} href="/membership">MEMBERSHIP</a>
