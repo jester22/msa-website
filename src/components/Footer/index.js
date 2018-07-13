@@ -90,7 +90,7 @@ const Footer = () => (
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={[styles.upperText, styles.text1Color]}>UPDATES</div>
 				<div style={styles.upperText}><a style={styles.text2Color} href="/blog">BLOG</a></div>
-				<div style={styles.upperText}><a style={styles.text2Color} href="/schedule">SCHEDULE</a></div>
+				<div style={styles.upperText}><a style={styles.text2Color} href="/calendar">SCHEDULE</a></div>
 			</div>
 			<div style={[styles.upperBox, styles.upperBoxBorder]}>
 				<div style={styles.upperText}><a style={styles.text1Color} href="/about">ABOUT MSA</a></div>
