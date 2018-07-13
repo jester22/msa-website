@@ -123,7 +123,7 @@ class Header extends React.Component {
 					<a style={styles.text1Color} href="/about">ABOUT US</a>
 				</div>
 				<div style={styles.menuItem}>
-					<a style={styles.text1Color} href="/schedule">SCHEDULE</a>
+					<a style={styles.text1Color} href="/calendar">SCHEDULE</a>
 				</div>
 				<div style={styles.moon}>
 					{/* <Moon/> */}
